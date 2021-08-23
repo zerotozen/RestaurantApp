@@ -1,21 +1,57 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState, useEffect } from "react";
+//we wrap our app with the theme provider.
+import { ThemeProvider } from "styled-components/native";
+import { theme } from "./src/insfractructure/theme/index";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import ExpoStatusBar from "expo-status-bar/build/ExpoStatusBar";
+import {
+  useFonts as useOswald,
+  Oswald_400Regular,
+} from "@expo-google-fonts/oswald";
+import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+import { Navigation } from "./src/insfractructure/navigation/index";
+import { AuthenticationContextProvider } from "./src/services/authentication/authentication.context";
+import * as firebase from "firebase";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCPWcOoh_ZtbTPsLTTo_ScVV_fIkH7IFLQ",
+  authDomain: "mealstogo-47138.firebaseapp.com",
+  projectId: "mealstogo-47138",
+  storageBucket: "mealstogo-47138.appspot.com",
+  messagingSenderId: "852128615350",
+  appId: "1:852128615350:web:742e0675f63d911eaa8f17",
+};
+
+// Initialize Firebase
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default function App() {
+  const [oswaldLoaded] = useOswald({
+    Oswald_400Regular,
+  });
+
+  const [latoLoaded] = useLato({
+    Lato_400Regular,
+  });
+
+  if (!oswaldLoaded || !latoLoaded) {
+    return null;
+  }
+
+  const Tab = createBottomTabNavigator();
+
+  return (
+    <>
+      <ThemeProvider theme={theme}>
+        <AuthenticationContextProvider>
+          <Navigation />
+        </AuthenticationContextProvider>
+      </ThemeProvider>
+      <ExpoStatusBar style="auto" />
+    </>
+  );
+}
