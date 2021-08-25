@@ -2,6 +2,8 @@ import React, { useState, useContext } from "react";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { Text } from "../../../components/typography/text.component";
+import { colors } from "../../../insfractructure/theme/colors";
+import styled from "styled-components/native";
 import {
   AccountBackground,
   AccountContainer,
@@ -12,6 +14,11 @@ import {
   Title,
 } from "../styles/account.styles";
 
+const RegisterTitle = styled(Title)`
+  color: ${colors.ui.quaternary};
+  font-weight: 700;
+`;
+
 export const RegisterScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -20,7 +27,7 @@ export const RegisterScreen = ({ navigation }) => {
   return (
     <AccountBackground>
       <AccountCover />
-      <Title>Restaurant's Box</Title>
+      <RegisterTitle>Restaurant's Box</RegisterTitle>
       <AccountContainer>
         <AuthInput
           label="E-mail"

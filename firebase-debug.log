@@ -1,0 +1,46 @@
+[debug] [2021-08-24T12:52:45.181Z] ----------------------------------------------------------------------
+[debug] [2021-08-24T12:52:45.188Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\AC\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2021-08-24T12:52:45.190Z] CLI Version:   9.16.5
+[debug] [2021-08-24T12:52:45.190Z] Platform:      win32
+[debug] [2021-08-24T12:52:45.190Z] Node Version:  v14.17.1
+[debug] [2021-08-24T12:52:45.193Z] Time:          Tue Aug 24 2021 14:52:45 GMT+0200 (hora de verano de Europa central)
+[debug] [2021-08-24T12:52:45.194Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-08-24T12:52:45.367Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-08-24T12:52:45.368Z] > authorizing via signed-in user (alwong46@gmail.com)
+[debug] [2021-08-24T12:52:45.369Z] [iam] checking project mealstogo-47138 for permissions ["firebase.projects.get"]
+[debug] [2021-08-24T12:52:45.378Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-08-24T12:52:45.379Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-08-24T12:52:45.824Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Tue, 24 Aug 2021 12:52:48 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-08-24T12:52:45.862Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/mealstogo-47138:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2021-08-24T12:52:46.791Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 24 Aug 2021 12:52:49 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=682","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-08-24T12:52:46.797Z] > refreshing access token with scopes: []
+[debug] [2021-08-24T12:52:46.797Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-08-24T12:52:47.046Z] <<< HTTP RESPONSE 200 {"date":"Tue, 24 Aug 2021 12:52:49 GMT","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-08-24T12:52:47.076Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-47138 [none]
+[debug] [2021-08-24T12:52:47.447Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-47138 200
+[debug] [2021-08-24T12:52:47.447Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-47138 {"projectId":"mealstogo-47138","projectNumber":"852128615350","displayName":"MealsToGo","name":"projects/mealstogo-47138","resources":{"hostingSite":"mealstogo-47138","storageBucket":"mealstogo-47138.appspot.com","locationId":"europe-west"},"state":"ACTIVE"}
+[info] 
+[info] === Serving from 'C:\Users\AC\Desktop\ReactProjects\react-native\RestaurantApp'...
+[info] 
+[info] +  functions: Using node@14 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@14 from host."}}
+[debug] [2021-08-24T12:52:47.469Z] defaultcredentials: writing to file C:\Users\AC\AppData\Roaming\firebase\alwong46_gmail_com_application_default_credentials.json
+[debug] [2021-08-24T12:52:47.475Z] Setting GAC to C:\Users\AC\AppData\Roaming\firebase\alwong46_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\AC\\AppData\\Roaming\\firebase\\alwong46_gmail_com_application_default_credentials.json"}}
+[debug] [2021-08-24T12:52:47.477Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-47138/adminSdkConfig [none]
+[debug] [2021-08-24T12:52:48.057Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-47138/adminSdkConfig 200
+[debug] [2021-08-24T12:52:48.058Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-47138/adminSdkConfig {"projectId":"mealstogo-47138","storageBucket":"mealstogo-47138.appspot.com","locationId":"europe-west"}
+[info] i  functions: Watching "C:\Users\AC\Desktop\ReactProjects\react-native\RestaurantApp\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\Users\\AC\\Desktop\\ReactProjects\\react-native\\RestaurantApp\\functions\" for Cloud Functions..."}}
+[debug] [2021-08-24T12:52:48.107Z] [worker-pool] addWorker(~diagnostic~) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(~diagnostic~)"}}
+[debug] [2021-08-24T12:52:48.108Z] [worker-pool] Adding worker with key ~diagnostic~, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key ~diagnostic~, total=1"}}
+[debug] [2021-08-24T12:52:48.109Z] [worker-pool] submitWork(triggerId=) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=)"}}
+[debug] [2021-08-24T12:52:48.110Z] [worker-~diagnostic~-81a51b11-877d-43a9-bc9a-2e5c3cbf7349]: Assigning socketPath: \\?\pipe\C:\Users\AC\Desktop\ReactProjects\react-native\RestaurantApp\functions\14840 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-~diagnostic~-81a51b11-877d-43a9-bc9a-2e5c3cbf7349]: Assigning socketPath: \\\\?\\pipe\\C:\\Users\\AC\\Desktop\\ReactProjects\\react-native\\RestaurantApp\\functions\\14840"}}
+[debug] [2021-08-24T12:52:48.111Z] [worker-~diagnostic~-81a51b11-877d-43a9-bc9a-2e5c3cbf7349]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-~diagnostic~-81a51b11-877d-43a9-bc9a-2e5c3cbf7349]: BUSY"}}
+[debug] [2021-08-24T12:52:49.047Z] [runtime-status] [14840] Functions runtime initialized. {"cwd":"C:\\Users\\AC\\Desktop\\ReactProjects\\react-native\\RestaurantApp\\functions","node_version":"14.17.1"} {"metadata":{"emulator":{"name":"functions"},"message":"[runtime-status] [14840] Functions runtime initialized. {\"cwd\":\"C:\\\\Users\\\\AC\\\\Desktop\\\\ReactProjects\\\\react-native\\\\RestaurantApp\\\\functions\",\"node_version\":\"14.17.1\"}"}}
+[debug] [2021-08-24T12:52:49.051Z] [runtime-status] [14840] Disabled runtime features: undefined {"metadata":{"emulator":{"name":"functions"},"message":"[runtime-status] [14840] Disabled runtime features: undefined"}}
+[warn] !  The Cloud Functions emulator requires the module "firebase-admin" to be installed. This package is in your package.json, but it's not available. You probably need to run "npm install" in your functions directory. {"metadata":{"emulator":{"name":"functions"},"message":"The Cloud Functions emulator requires the module \"firebase-admin\" to be installed. This package is in your package.json, but it's not available. You probably need to run \"npm install\" in your functions directory."}}
+[info] i  functions: Your functions could not be parsed due to an issue with your node_modules (see above) {"metadata":{"emulator":{"name":"functions"},"message":"Your functions could not be parsed due to an issue with your node_modules (see above)"}}
+[debug] [2021-08-24T12:52:49.086Z] [worker-~diagnostic~-81a51b11-877d-43a9-bc9a-2e5c3cbf7349]: exited {"metadata":{"emulator":{"name":"functions"},"message":"[worker-~diagnostic~-81a51b11-877d-43a9-bc9a-2e5c3cbf7349]: exited"}}
+[debug] [2021-08-24T12:52:49.087Z] [worker-~diagnostic~-81a51b11-877d-43a9-bc9a-2e5c3cbf7349]: FINISHED {"metadata":{"emulator":{"name":"functions"},"message":"[worker-~diagnostic~-81a51b11-877d-43a9-bc9a-2e5c3cbf7349]: FINISHED"}}

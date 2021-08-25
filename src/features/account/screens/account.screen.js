@@ -1,6 +1,8 @@
 import React from "react";
 import LottieView from "lottie-react-native";
 import { Spacer } from "../../../components/spacer/spacer.component";
+import { colors } from "../../../insfractructure/theme/colors";
+import styled from "styled-components/native";
 import {
   AccountBackground,
   AccountContainer,
@@ -9,6 +11,11 @@ import {
   Title,
   AnimationWrapper,
 } from "../styles/account.styles";
+
+const AccountTitle = styled(Title)`
+  color: ${colors.ui.quaternary};
+  font-weight: 700;
+`;
 
 export const AccountScreen = ({ navigation }) => {
   return (
@@ -23,7 +30,7 @@ export const AccountScreen = ({ navigation }) => {
           source={require("../../../../assets/aguacate.json")}
         />
       </AnimationWrapper>
-      <Title>Restaurant's Box</Title>
+      <AccountTitle>Restaurant's Box</AccountTitle>
       <AccountContainer>
         <AuthButton
           icon="lock-open-outline"
