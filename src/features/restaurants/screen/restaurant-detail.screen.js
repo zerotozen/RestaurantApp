@@ -1,15 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 import { SafeArea } from "../../../components/utility/safe-area.component";
-import { List } from "react-native-paper";
+import { List, Divider } from "react-native-paper";
 import { ScrollView } from "react-native";
+import { Spacer } from "../../../components/spacer/spacer.component";
+import { OrderButton } from "../components/restaurant-list.styles";
 
-export const RestaurantDetailScreen = ({ route }) => {
+import { CartContext } from "../../../services/cart/cart.context";
+
+export const RestaurantDetailScreen = ({ navigation, route }) => {
   const { restaurant } = route.params;
   const [breakfastExpanded, setBreakfastExpanded] = useState(false);
   const [lunchExpanded, setLunchExpanded] = useState(false);
   const [dinnerExpanded, setDinnerExpanded] = useState(false);
   const [drinksExpanded, setDrinksExpanded] = useState(false);
+
+  const { addToCart } = useContext(CartContext);
 
   return (
     <>
@@ -23,7 +29,9 @@ export const RestaurantDetailScreen = ({ route }) => {
             onPress={() => setBreakfastExpanded(!breakfastExpanded)}
           >
             <List.Item title="Eggs Benedict" />
+            <Divider />
             <List.Item title="Classic Breakfast" />
+            <Divider />
           </List.Accordion>
 
           <List.Accordion
@@ -32,9 +40,12 @@ export const RestaurantDetailScreen = ({ route }) => {
             expanded={lunchExpanded}
             onPress={() => setLunchExpanded(!lunchExpanded)}
           >
-            <List.Item title="Burger w/ Fries" />
+            <List.Item title="Burger / Fries" />
+            <Divider />
             <List.Item title="Steak Sandwich" />
+            <Divider />
             <List.Item title="Mushroom Soup" />
+            <Divider />
           </List.Accordion>
 
           <List.Accordion
@@ -44,8 +55,11 @@ export const RestaurantDetailScreen = ({ route }) => {
             onPress={() => setDinnerExpanded(!dinnerExpanded)}
           >
             <List.Item title="Spaghetti Bolognese" />
+            <Divider />
             <List.Item title="Veal Cutlet with Chicken Mushroom Rotini" />
+            <Divider />
             <List.Item title="Steak Frites" />
+            <Divider />
           </List.Accordion>
 
           <List.Accordion
@@ -55,12 +69,29 @@ export const RestaurantDetailScreen = ({ route }) => {
             onPress={() => setDrinksExpanded(!drinksExpanded)}
           >
             <List.Item title="Coffee" />
+            <Divider />
             <List.Item title="Tea" />
+            <Divider />
             <List.Item title="Modelo" />
+            <Divider />
             <List.Item title="Coke" />
+            <Divider />
             <List.Item title="Fanta" />
+            <Divider />
           </List.Accordion>
         </ScrollView>
+        <Spacer position="bottom" size="large">
+          <OrderButton
+            mode="contained"
+            icon="cash"
+            onPress={() => {
+              addToCart({ item: "special", price: 1299 }, restaurant);
+              navigation.navigate("Checkout");
+            }}
+          >
+            ORDER SPECIAL ONLY 12.99€
+          </OrderButton>
+        </Spacer>
       </SafeArea>
     </>
   );

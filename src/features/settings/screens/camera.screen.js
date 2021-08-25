@@ -1,9 +1,11 @@
 import React, { useRef, useState, useEffect, useContext } from "react";
 import { Text, View, TouchableOpacity } from "react-native";
 import { Camera } from "expo-camera";
-import styled from "styled-components";
+
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+
+import styled from "styled-components";
 
 const ProfileCamera = styled(Camera)`
   width: 100%;

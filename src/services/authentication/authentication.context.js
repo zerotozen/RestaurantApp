@@ -19,7 +19,6 @@ export const AuthenticationContextProvider = ({ children }) => {
   });
 
   const onLogin = (email, password) => {
-    console.log("que recibo", email, password);
     setIsLoading(true);
     loginRequest(email, password)
       .then((u) => {

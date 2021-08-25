@@ -1,10 +1,5 @@
-import React, {
-  useState,
-  createContext,
-  useEffect,
-  useMemo,
-  useContext,
-} from "react";
+import React, { useState, createContext, useEffect, useContext } from "react";
+
 import { LocationContext } from "../location/location.context";
 import {
   restaurantsRequest,
@@ -28,8 +23,10 @@ export const RestaurantsContextProvider = ({ children }) => {
         .then((results) => {
           setIsLoading(false);
           setRestaurants(results);
+          setError(null);
         })
         .catch((err) => {
+          setRestaurants([]);
           setIsLoading(false);
           setError(err);
         });
@@ -37,7 +34,7 @@ export const RestaurantsContextProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    //tenemos que transformar los datos al formato que esperamos recivir
+    //tenemos que transformar los datos al formato que esperamos recibir
     if (location) {
       const locationString = `${location.lat},${location.lng}`;
       retrieveRestaurants(locationString);

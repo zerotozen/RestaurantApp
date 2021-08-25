@@ -1,8 +1,11 @@
 import React from "react";
 import LottieView from "lottie-react-native";
+
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { colors } from "../../../insfractructure/theme/colors";
+
 import styled from "styled-components/native";
+
 import {
   AccountBackground,
   AccountContainer,
